@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Univercity Application Test Automation Test Suite">
+
+    <listeners>
+        <listener class-name="com.univercity.qa.extentReportListener.ExtentReporterNG" />
+    </listeners>
+
+
+    <test name="Univercity App Test Cases">
+        <classes>
+            <class name="com.univercity.qa.testcases.LoginPageTest" ></class>
+          <class name="com.univercity.qa.testcases.PersonalInformationPageTest"></class>
+            <class name="com.univercity.qa.testcases.EducationaInformationPageTest"></class>
+            <class name="com.univercity.qa.testcases.ProfessionalExperiencePageTest"></class>
+            <class name="com.univercity.qa.testcases.ReferencesPageTest"></class>
+            <class name="com.univercity.qa.testcases.PersonalStatementPageTest"></class>
+           <class name="com.univercity.qa.testcases.ReferAFriendPageTest"></class>
+
+        </classes>
+    </test>
+</suite>
