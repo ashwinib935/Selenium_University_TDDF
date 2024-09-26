@@ -22,28 +22,28 @@ public class PersonalInformationPage {
     WebElement academicTerm;
 
 
-    @FindBy(xpath = "//input[@id='Nickname__c-38']")
+    @FindBy(xpath = "//input[@name='Nickname__c']")
     WebElement pFName;
 
-    @FindBy(xpath = "//input[@id='Date_of_Birth__c-51']")
+    @FindBy(xpath = "//input[@name='Date_of_Birth__c']")
     WebElement bDate;
 
-    @FindBy(xpath = "//input[@id='Address_Line_1__c-58']")
+    @FindBy(xpath = "//input[@name='Address_Line_1__c']")
     WebElement address1;
 
-    @FindBy(xpath = "//input[@id='City__c-62']")
+    @FindBy(xpath = "//input[@name='City__c']")
     WebElement city;
 
-    @FindBy(xpath = "//input[@id='State_Province__c-63']")
+    @FindBy(xpath = "//input[@name='State_Province__c']")
     WebElement state;
 
-    @FindBy(xpath = "//input[@id='Zip_Postal_Code__c-64']")
+    @FindBy(xpath = "//input[@name='Zip_Postal_Code__c']")
     WebElement zipCode;
 
-    @FindBy(xpath = "//select[@id='Country__c-67']")
+    @FindBy(xpath = "//select[@name='Country__c']")
     WebElement country;
 
-    @FindBy(xpath = "//select[@id='Citizenship_Status__c-86']")
+    @FindBy(xpath = "//select[@name='Citizenship_Status__c']")
     WebElement citizenship_status;
 
     @FindBy(xpath = "//input[@id='Yes-99']")

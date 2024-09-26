@@ -9,7 +9,12 @@
 
     <test name="Univercity App Test Cases">
         <classes>
-            <class name="com.univercity.qa.testcases.LoginPageTest" ></class>
+            <class name="com.univercity.qa.testcases.LoginPageTest" >
+<!--                <methods>-->
+<!--<exclude name="verifyLoginPageTitleTest"></exclude>-->
+<!--                </methods>-->
+            </class>
+
           <class name="com.univercity.qa.testcases.PersonalInformationPageTest"></class>
             <class name="com.univercity.qa.testcases.EducationaInformationPageTest"></class>
             <class name="com.univercity.qa.testcases.ProfessionalExperiencePageTest"></class>
