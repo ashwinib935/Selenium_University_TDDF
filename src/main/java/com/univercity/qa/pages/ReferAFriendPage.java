@@ -19,8 +19,6 @@ public class ReferAFriendPage {
     }
 
     public void fillReferAFriend() throws InterruptedException {
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        Thread.sleep(5000);
         continueBtn.click();
     }
 }

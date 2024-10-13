@@ -58,8 +58,6 @@ public class ReferencesPage {
     public void fillReferencesDetails(String refer1FName,String refer1LName,String refer1Title,String refer1Organization,String refer1email,String refer1Phone,
                                       String refer2FName,String refer2LName,String refer2Title,String refer2Organization,String refer2email,String refer2Phone) throws InterruptedException {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        Thread.sleep(5000);
-
         ref1FName.sendKeys(refer1FName);
         ref1LName.sendKeys(refer1LName);
         ref1Title.sendKeys(refer1Title);
@@ -67,8 +65,6 @@ public class ReferencesPage {
         ref1email.sendKeys(refer1email);
 
         flag1select.click();
-        Thread.sleep(5000);
-
         List<WebElement>flaglist1 = driver.findElements(By.xpath("//ul[@id='iti-0__country-listbox']//li"));
         System.out.println("Flag  list 1"+flaglist1.size());
         for (int i=0;i<flaglist1.size();i++){
@@ -77,11 +73,9 @@ public class ReferencesPage {
                 break;
             }
         }
-        Thread.sleep(1000);
         JavascriptExecutor js1 = ((JavascriptExecutor) driver);
         js1.executeScript("arguments[0].value="+refer1Phone, ref1Telephone);
 
-        Thread.sleep(5000);
 
         ref2FName.sendKeys(refer2FName);
         ref2LName.sendKeys(refer2LName);
@@ -89,7 +83,6 @@ public class ReferencesPage {
         ref2Organization.sendKeys(refer2Organization);
         ref2email.sendKeys(refer2email);
 
-        Thread.sleep(5000);
 
         flag2select.click();
 
@@ -102,7 +95,6 @@ public class ReferencesPage {
                 break;
             }
         }
-        Thread.sleep(2000);
         JavascriptExecutor js2 = ((JavascriptExecutor) driver);
         js2.executeScript("arguments[0].value="+refer2Phone, ref2Telephone);
 

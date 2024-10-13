@@ -2,10 +2,16 @@ package com.univercity.qa.pages;
 
 import com.univercity.qa.utill.JavaScriptExecuterUtil;
 import com.univercity.qa.utill.TestUtil;
+import net.bytebuddy.pool.TypePool;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import static com.univercity.qa.base.TestBase.driver;
@@ -22,15 +28,15 @@ public class LoginPage {
     WebElement loginBtn;
     HomePage homePage;
 
-
+    WebDriverWait wait;
     public LoginPage() {
         PageFactory.initElements(driver, this);
         homePage = new HomePage();
+       wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     public HomePage login(String emailId, String pwd) {
 
-        driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
         JavaScriptExecuterUtil.scrollIntoView(loginBtn, driver);
         email.sendKeys(emailId);
 

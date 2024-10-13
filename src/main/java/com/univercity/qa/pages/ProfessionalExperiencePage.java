@@ -5,8 +5,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.Select;
 
+
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import static com.univercity.qa.base.TestBase.driver;
@@ -63,43 +67,31 @@ public class ProfessionalExperiencePage {
     @FindBy(xpath = "//div[@class='btn__wrap']//button")
     WebElement continueBtn;
 
+    WebDriverWait wait;
     public ProfessionalExperiencePage(){
+        wait =new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver,this);
 
     }
 
     public void fillProfessionalInfo(String employername,String streetAddress,String cityOfEmp,String state1,String zipCode,String selectedCountry,String positionOfEmp,String startdate) throws InterruptedException {
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        Thread.sleep(5000);
-//
+       wait.until(ExpectedConditions.visibilityOfElementLocated(uploadFileBtn));
         uploadFileBtn.click();
-        Thread.sleep(2000);
 
         inputFile.sendKeys("C:\\Users\\WIN 10\\Desktop\\JS_Questions.docx");
         upload.click();
-
-        Thread.sleep(5000);
         employerName.sendKeys(employername);
-        Thread.sleep(2000);
         street.sendKeys(streetAddress);
-
         city.sendKeys(cityOfEmp);
         state.sendKeys(state1);
         zip.sendKeys(zipCode);
-        Thread.sleep(2000);
         Select select= new Select(country);
         select.selectByVisibleText(selectedCountry);
-        Thread.sleep(2000);
         position.sendKeys(positionOfEmp);
-        Thread.sleep(2000);
         startDate.sendKeys(startdate);
-        Thread.sleep(2000);
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].click()", currentlyEmpHereCheckbox);
-
-        Thread.sleep(2000);
         saveBtn.click();
-        Thread.sleep(5000);
         continueBtn.click();
 
 

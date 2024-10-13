@@ -69,15 +69,11 @@ WebElement continueBtn;
 
      //
      public void registration(String fname, String lname, String deg, String academic_Term,String phoneNo,String email_Id,String selected_country,String pwd,String c_pwd) throws InterruptedException {
-        Thread.sleep(2000);
          firstName.sendKeys(fname);
-         Thread.sleep(2000);
          lastName.sendKeys(lname);
-         Thread.sleep(2000);
          degree.sendKeys("Master");
      List<WebElement> degreeList = driver.findElements(By.xpath("//ul[@class='list-container']//li"));
          System.out.println("Degree size"+degreeList.size());
-         Thread.sleep(2000);
          for (int i=0;i<degreeList.size();i++){
              if(degreeList.get(i).getText().equals(deg)){
                  degreeList.get(i).click();
@@ -85,11 +81,9 @@ WebElement continueBtn;
              }
          }
 
-         Thread.sleep(3000);
          Select academic = new Select(academicTerm);
          academic.selectByVisibleText(academic_Term);
 
-         Thread.sleep(2000);
          selectFlag.click();
 
          List<WebElement> flagList = driver.findElements(By.xpath("//ul[@id='iti-0__country-listbox']//li"));
@@ -102,19 +96,17 @@ WebElement continueBtn;
              }
          }
 
-        Thread.sleep(1000);
          JavascriptExecutor js = ((JavascriptExecutor) driver);
          js.executeScript("arguments[0].value="+phoneNo, phone);
 
          JavaScriptExecuterUtil.scrollIntoView(email,driver);
-         Thread.sleep(3000);
+
          email.sendKeys(email_Id);
          Select selectedCountry = new Select(country);
          selectedCountry.selectByVisibleText(selected_country);
-         Thread.sleep(3000);
+
          password.sendKeys(pwd);
          confirm_password.sendKeys(c_pwd);
-         Thread.sleep(1000);
          continueBtn.click();
 
      }

@@ -31,7 +31,6 @@ public class PersonalStatementPage {
     }
 
     public void fillPersonalStatement() throws InterruptedException {
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         ((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", uploadRadiobtn);
 
         selectFileBtn.click();

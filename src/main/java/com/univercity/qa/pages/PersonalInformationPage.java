@@ -63,8 +63,6 @@ public class PersonalInformationPage {
     public void fillPersonlInfo(String selectedDegree, String selectedAcademic, String preferedFirstName, String birthDate, String addr1,
                                 String selectedCity, String selectedState, String selectedZipCode, String selectedCountry, String selectedCitizenshipStatus, String iS_hispanicOrLatino) throws InterruptedException {
 
-        driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-        Thread.sleep(5000);
         List<WebElement> degreeList = driver.findElements(By.xpath("//ul[@class='list-container']//li"));
         System.out.println("Degree size" + degreeList.size());
         Thread.sleep(2000);
